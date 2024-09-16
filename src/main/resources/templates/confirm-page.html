@@ -5,6 +5,16 @@
     <title>Confirmation</title>
 </head>
 <body>
+    <p th:text="'Checking: ' + ${demo}"></p>
     <p th:text="'Yo! I you ' + ${student.firstName} + ' ' + ${student.lastName} "></p>
+    <p th:text="'Country ' + ${student.country} "></p>
+    <p th:text="'So, Your favourite language is ' + ${student.favouriteLanguage} "></p>
+<!--    <p th:text="'So, Your favourite os were ' + ${student.os} "></p>-->
+    <p>
+        So, Your favourite os were,
+    </p>
+    <ul>
+        <li th:each="demo : ${student.os}" th:text="${demo}"></li>
+    </ul>
 </body>
 </html>

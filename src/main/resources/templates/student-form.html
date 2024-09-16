@@ -8,14 +8,38 @@
     <div>
         <form method="post" th:object="${student}" th:action="@{/confirmPage}" >
             <div>
-                <span>First Name </span>
+                <span>First Name: </span>
                 <input type="text" th:field="*{firstName}" />
             </div>
             <br />
             <br />
             <div>
-                <span>Last Name </span>
+                <span>Last Name: </span>
                 <input type="text" th:field="*{lastName}" />
+            </div>
+            <br />
+            <br />
+            <div>
+                <span>Country: </span>
+                <select th:field="*{country}">
+                    <option th:each="theCountry : ${countries}" th:value="${theCountry}" th:text="${theCountry}" ></option>
+                </select>
+            </div>
+            <br />
+            <br />
+            <div>
+                <span>Favourite Programming Language: </span>
+                <input type="radio" th:field="*{favouriteLanguage}" th:value="go" th:text="Go" />
+                <input type="radio" th:field="*{favouriteLanguage}" th:value="python" th:text="Python" />
+                <input type="radio" th:field="*{favouriteLanguage}" th:value="java" th:text="Java" />
+            </div>
+            <br />
+            <br />
+            <div>
+                <span>Favourite Operating System: </span>
+                <input type="checkbox" th:field="*{os}" th:value="Windows" th:text="Windows" />
+                <input type="checkbox" th:field="*{os}" th:value="Linux" th:text="Linux" />
+                <input type="checkbox" th:field="*{os}" th:value="Mac" th:text="Mac" />
             </div>
             <br />
             <br />
